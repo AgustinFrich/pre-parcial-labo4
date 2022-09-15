@@ -1,0 +1,24 @@
+<div *ngIf="paises; then thenBlock"></div>
+<ng-template #thenBlock>
+    <table class="table table-striped">
+        <thead>
+            <tr class="text-center align-middle">
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Estreno</th>
+                <th scope="col">Publico</th>
+                <th scope="col">Foto</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let pais of paises;">
+            <tr class="text-center" style="vertical-align: middle;">
+                <!--
+                    <td scope="row">{{ pais.nombre }}</td>
+                    
+                    <td><img class="cover" src={{pais.png}} alt=""></td>
+                -->
+            </tr>
+        </tbody>
+    </table>
+</ng-template>

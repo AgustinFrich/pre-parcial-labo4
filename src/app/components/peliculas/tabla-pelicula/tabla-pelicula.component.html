@@ -1,0 +1,32 @@
+<div *ngIf="tabla; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+<table class="table table-striped">
+    <thead>
+        <tr class="text-center align-middle">
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Estreno</th>
+            <th scope="col">Publico</th>
+            <th scope="col">Foto</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let pelicula of peliculas;">
+        <tr class="text-center" style="vertical-align: middle;" (click)="mostrarDetalle(pelicula)">
+            <td scope="row">{{ pelicula.id }}</td>
+            <td>{{pelicula.nombre}}</td>
+            <td>{{Tipos[pelicula.tipo]}}</td>
+            <td>{{pelicula.fechaDeEstreno.toDate().toLocaleDateString()}}</td>
+            <td>{{pelicula.cantidadDePublico}}</td>
+            <td><img class="cover" src={{pelicula.fotoDeLaPelicula}} alt=""></td>
+        </tr> 
+    </tbody>
+</table>
+</ng-template>
+<ng-template #elseBlock>
+<ul *ngFor="let pelicula of peliculas;">
+    <li>{{pelicula.id}} - {{pelicula.nombre}} - {{Tipos[pelicula.tipo]}} - {{pelicula.fechaDeEstreno.toDate().toLocaleDateString()}} - {{pelicula.cantidadDePublico}} - {{pelicula.fotoDeLaPelicula}}</li>
+</ul>
+
+
+</ng-template>

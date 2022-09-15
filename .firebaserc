@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pruebaparcial-e109f": {
+      "hosting": {
+        "practicaParcial": [
+          "pruebaparcial-e109f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pruebaparcial-e109f"
+  }
+}
