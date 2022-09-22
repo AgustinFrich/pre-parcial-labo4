@@ -1,3 +1,5 @@
+import { addDoc, collection } from '@firebase/firestore';
+import { Firestore } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +7,10 @@ import { Injectable } from '@angular/core';
 })
 export class ActoresDbService {
 
-  constructor() { }
+  constructor(private fs: Firestore) { }
+
+  add(nombre: string, pais: string) {
+    const col = collection(this.fs, "actores");
+    addDoc(col, {nombre: nombre, pais: pais});
+  }
 }

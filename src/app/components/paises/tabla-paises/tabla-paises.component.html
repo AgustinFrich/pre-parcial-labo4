@@ -3,22 +3,20 @@
     <table class="table table-striped">
         <thead>
             <tr class="text-center align-middle">
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Tipo</th>
-                <th scope="col">Estreno</th>
-                <th scope="col">Publico</th>
-                <th scope="col">Foto</th>
+                <th scope="col">Paises</th>
             </tr>
         </thead>
-        <tbody *ngFor="let pais of paises;">
-            <tr class="text-center" style="vertical-align: middle;">
-                <!--
-                    <td scope="row">{{ pais.nombre }}</td>
-                    
-                    <td><img class="cover" src={{pais.png}} alt=""></td>
-                -->
+        <tbody style="cursor: pointer;">
+            <tr *ngFor="let pais of paises;" class="text-center" style="vertical-align: middle;">
+                <td class="d-flex" (click)="seleccionar(pais.name.common)">
+                    <img class="cover me-3" style="height: 25px;" src={{pais.flags.png}} alt="">
+                    <p class="mb-0">{{pais.name.common }}</p>
+                </td>   
             </tr>
         </tbody>
     </table>
+    <div>
+        <button (click)="anterior()">&lt;</button>
+        <button (click)="proxima()" style="float: right;">&gt;</button>
+    </div>
 </ng-template>
