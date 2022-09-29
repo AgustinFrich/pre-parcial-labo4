@@ -1,1 +1,74 @@
-<p>pelicula-alta works!</p>
+<div class="form-bg mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-container">
+                    <h3 class="title">Ingrese una pelicula</h3>
+                    <br/>
+                    <form [formGroup]="forma" (ngSubmit)="guardar()" class="form-horizontal">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name" formControlName="nombre" name="name" [(ngModel)]="pelicula.nombre" >
+                            <div class="invalid">
+                                <small class="invalid"
+                                    *ngIf="forma.controls['nombre'].errors !== null && forma.controls['nombre'].touched">
+                                    El nombre es requerido
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select type="text" class="form-control" formControlName="tipo" name="tipo" [(ngModel)]="pelicula.tipo">
+                                <option *ngFor="let t of tipos" [selected]="pelicula.tipo === 3" value={{t}}>{{t}}</option>
+                            </select>
+                            <div class="invalid">
+                                <small class="invalid"
+                                    *ngIf="forma.controls['tipo'].touched && forma.controls['tipo'].errors !== null">
+                                    El tipo es requerido
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" class="form-control" placeholder="Fecha de estreno" formControlName="fecha" name="fechaDeEstreno" [(ngModel)]="fechaDeEstreno ">
+                            <div class="invalid">
+                                <small class="invalid"
+                                    *ngIf="forma.controls['fecha'].touched && forma.controls['fecha'].errors !== null">
+                                    La fecha es requerida
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Público" formControlName="publico" name="cantidadDePublico" [(ngModel)]="pelicula.cantidadDePublico">
+                            <div class="invalid">
+                                <small class="invalid"
+                                    *ngIf="forma.controls['publico'].touched && forma.controls['publico'].errors !== null">
+                                    Ingrese un público válido
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" readonly class="form-control" placeholder="Seleccione un actor" formControlName="actor" name="actor" [(ngModel)]="pelicula.actor" value={{pelicula.actor}}>
+                            <div class="invalid">
+                                <small class="invalid"
+                                    *ngIf="forma.controls['actor'].touched && forma.controls['actor'].errors !== null">
+                                    Seleccione un actor de la lista
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" class="form-control" placeholder="Seleccione la imagen" formControlName="imagen" name="imagen" (change)="onFileSelected($event)">
+                            <div class="invalid">
+                                <small class="invalid"
+                                    *ngIf="forma.controls['imagen'].touched && forma.controls['imagen'].errors !== null">
+                                    Seleccione una imagen para continuar
+                                </small>
+                            </div>
+                        </div>
+                        <button class="btn signup btn-dark" type="submit" [disabled]="!forma.valid" >Guardar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <app-actor-listado (actorSeleccionadoEvent)="actorSeleccionado($event)" ></app-actor-listado>
+            </div>
+        </div>
+    </div>
+</div>

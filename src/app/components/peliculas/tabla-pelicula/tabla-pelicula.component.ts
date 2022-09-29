@@ -16,17 +16,11 @@ export class TablaPeliculaComponent implements OnInit {
 
   ngOnInit(): void {
     this.db.getAll().subscribe((data) => {
-      data.forEach((pelicula) => {
-        if(!this.peliculas.includes(pelicula))
-          this.peliculas.push(pelicula);
-      })
+      this.peliculas = [];
+      this.peliculas = data;
     });
   }
   
-  public get Tipos(): typeof TIPOS {
-    return TIPOS; 
-  }
-
   mostrarDetalle(item: Pelicula) {
     this.mostarPelicula.emit(item);
   } 

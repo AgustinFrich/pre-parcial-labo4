@@ -1,7 +1,7 @@
 <div *ngIf="pelicula !== undefined;" style="text-align: center;">
     <p scope="row" style="font-size: 10px; margin-bottom: 0px;">{{ pelicula.id }}</p>
     <h4 style="margin-bottom: 0px;">{{pelicula.nombre}}</h4>
-    <p style="margin-top: 0px;">{{Tipos[pelicula.tipo]}}</p>
+    <p style="margin-top: 0px;">{{pelicula.tipo}}</p>
     <h6>Estreno</h6>
     <p >{{pelicula.fechaDeEstreno.toDate().toLocaleDateString()}}</p>
     <h6>Público</h6>

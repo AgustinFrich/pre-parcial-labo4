@@ -14,8 +14,4 @@ export class DetallePeliculaComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
-  public get Tipos(): typeof TIPOS {
-    return TIPOS; 
-  }
 }
