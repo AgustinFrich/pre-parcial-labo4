@@ -1,0 +1,9 @@
+<div *ngIf="actor !== undefined;" style="text-align: center;">
+    <h4 style="margin-bottom: 0px;">{{  actor.nombre }}</h4>
+    <p scope="row" style="font-size: 10px; margin-bottom: 0px;">{{ actor.pais.name['common'] }}</p>
+    
+    
+    <img class="cover" src="{{ actor.pais.flags['svg'] }}" alt="" >
+
+
+</div>

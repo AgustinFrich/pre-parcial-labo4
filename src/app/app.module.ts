@@ -19,6 +19,10 @@ import { TablaPaisesComponent } from './components/paises/tabla-paises/tabla-pai
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { FIREBASE_OPTIONS }from '@angular/fire/compat';
+import { ActorPeliculaComponent } from './components/actor/actor-pelicula/actor-pelicula.component';
+import { TablaPeliculaActorComponent } from './components/peliculas/tabla-pelicula-actor/tabla-pelicula-actor.component';
+import { DetallePaisComponent } from './components/paises/detalle-pais/detalle-pais.component';
+import { DetalleActorComponent } from './components/actor/detalle-actor/detalle-actor.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { FIREBASE_OPTIONS }from '@angular/fire/compat';
     PeliculaAltaComponent,
     TablaPeliculaComponent,
     DetallePeliculaComponent,
-    TablaPaisesComponent
+    TablaPaisesComponent,
+    ActorPeliculaComponent,
+    TablaPeliculaActorComponent,
+    DetallePaisComponent,
+    DetalleActorComponent
   ],
   imports: [
     BrowserModule,

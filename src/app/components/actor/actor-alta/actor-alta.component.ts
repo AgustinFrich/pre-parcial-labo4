@@ -8,7 +8,7 @@ import { ActoresDbService } from 'src/app/services/actores-db.service';
 })
 export class ActorAltaComponent implements OnInit {
   nombre: string = "";
-  pais: string = "";
+  pais: any;
   error: string = "";
   
   constructor(private actoresDB: ActoresDbService) { }
@@ -16,8 +16,8 @@ export class ActorAltaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  paisSeleccionado(nombre: string) {
-    this.pais = nombre;
+  paisSeleccionado(pais: any) {
+    this.pais = pais;
   }
 
   guardar() {

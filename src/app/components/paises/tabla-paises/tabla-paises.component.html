@@ -8,7 +8,7 @@
         </thead>
         <tbody style="cursor: pointer;">
             <tr *ngFor="let pais of paises;" class="text-center" style="vertical-align: middle;">
-                <td class="d-flex" (click)="seleccionar(pais.name.common)">
+                <td class="d-flex" (click)="seleccionar(pais)">
                     <img class="cover me-3" style="height: 25px;" src={{pais.flags.png}} alt="">
                     <p class="mb-0">{{pais.name.common }}</p>
                 </td>   

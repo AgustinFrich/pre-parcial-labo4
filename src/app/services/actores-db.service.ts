@@ -11,7 +11,7 @@ export class ActoresDbService {
 
   constructor(private fs: Firestore) { }
 
-  add(nombre: string, pais: string) {
+  add(nombre: string, pais: any) {
     const col = collection(this.fs, "actores");
     addDoc(col, {nombre: nombre, pais: pais});
   }

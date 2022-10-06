@@ -1,8 +1,8 @@
 export class Actor {
     nombre: string;
-    pais: string;
+    pais: any;
 
-    constructor(nombre: string, pais: string) {
+    constructor(nombre: string, pais: any) {
         this.nombre = nombre;
         this.pais = pais;
     }

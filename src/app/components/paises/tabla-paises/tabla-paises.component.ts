@@ -22,7 +22,7 @@ export class TablaPaisesComponent implements OnInit {
     })
   }
 
-  seleccionar(pais: string) {
+  seleccionar(pais: any) {
     this.paisSeleccionadoEvent.emit(pais);
   }
 

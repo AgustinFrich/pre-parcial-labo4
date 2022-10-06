@@ -1,0 +1,6 @@
+<div *ngIf="pais !== undefined;" style="text-align: center;">
+    <p scope="row" style="font-size: 10px; margin-bottom: 0px;">{{ pais.continents[0] }}</p>
+    <h4 style="margin-bottom: 0px;">{{ pais.name['common'] }}</h4>
+    <p scope="row" style="font-size: 10px; margin-bottom: 0px;">{{ pais.subregion }}</p>
+    <img class="cover" src="{{ pais.flags['svg'] }}">
+</div>

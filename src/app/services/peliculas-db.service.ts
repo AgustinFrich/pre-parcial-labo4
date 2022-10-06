@@ -1,6 +1,6 @@
 import { Pelicula } from './../clases/pelicula';
 import { Injectable } from '@angular/core';
-import { addDoc, collectionData, Firestore } from '@angular/fire/firestore';
+import { addDoc, collectionData, Firestore, query, where } from '@angular/fire/firestore';
 import { collection} from '@firebase/firestore';
 import { finalize, Observable } from 'rxjs';
 import { AngularFireStorage } from "@angular/fire/compat/storage";
@@ -14,6 +14,11 @@ export class PeliculasDBService {
   getAll(): Observable<Pelicula[]> {
     const col = collection(this.firestore, "peliculas");
     return collectionData(col, {idField: "id"}) as Observable<Pelicula[]>;
+  }
+
+  getFromActor(actor: string) {
+    const co = collection(this.firestore, "peliculas");
+   // const q = query(co, where(""))
   }
 
   guardar(pelicula: Pelicula, imagen: any) {
